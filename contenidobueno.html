@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo hacer buen contenido</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 60px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .step-card {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #38bdf8;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Retraso en las animaciones para que aparezcan uno por uno */
+        .step-card:nth-child(1) { animation-delay: 0.2s; }
+        .step-card:nth-child(2) { border-left-color: #8b5cf6; animation-delay: 0.4s; }
+        .step-card:nth-child(3) { border-left-color: #ec4899; animation-delay: 0.6s; }
+        .step-card:nth-child(4) { border-left-color: #10b981; animation-delay: 0.8s; }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e2e8f0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .step-number {
+            background: #38bdf8;
+            color: #0f172a;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+        
+        .step-card:nth-child(2) .step-number { background: #8b5cf6; }
+        .step-card:nth-child(3) .step-number { background: #ec4899; }
+        .step-card:nth-child(4) .step-number { background: #10b981; }
+
+        .step-content {
+            color: #cbd5e1;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #fff;
+            background: #334155;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background: #475569;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Guía para Creadores</h1>
+        <p>Aprende a destacar con tu contenido siguiendo estos 4 pasos</p>
+    </div>
+
+    <div class="container">
+        <!-- Paso 1 -->
+        <div class="step-card">
+            <div class="step-title">
+                <span class="step-number">1</span> Piensa el tema del video
+            </div>
+            <div class="step-content">
+                Debes elegir un buen tema, algo recurrente y buscable. Mi primer video fue de un tema meme y obtuvo en menos de 1 hora sus primeros 4 mil visitas. Finalmente llegó a 120 mil visitas en TikTok.
+            </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="step-card">
+            <div class="step-title">
+                <span class="step-number">2</span> Elige un texto llamativo y colores atractivos
+            </div>
+            <div class="step-content">
+                La mayoría de la gente, skipea los vídeos, pero si es atractivo y llama la atención, se quedarán viendo el vídeo. Para eso añade texto o color relacionado a tu vídeo.
+            </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="step-card">
+            <div class="step-title">
+                <span class="step-number">3</span> No esperes vistas
+            </div>
+            <div class="step-content">
+                Confía en ti mismo. No siempre obtendrás visitas y likes. Cada persona tiene sus gustos, y esas personas, llegarán pronto. 20 vistas, parece poco pero no lo es. Imagina, 20 personas en un dispositivo, viendo tu vídeo, 1000 personas, 200, no importa el número. Importa tu motivación.
+            </div>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="step-card">
+            <div class="step-title">
+                <span class="step-number">4</span> Habla bien o pon una buena voz
+            </div>
+            <div class="step-content">
+                Anda directo al grano con frases cómo "¿Sabías qué?", "Un día...", "Algo que dejó locos a todos..." y más frases cómo esas. Acuerda de adaptarte a tu estilo.
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html" class="btn-back">← Volver al Inicio</a>
+
+</body>
+</html>
