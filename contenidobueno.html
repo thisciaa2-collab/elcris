@@ -3,178 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cómo hacer buen contenido</title>
+    <title>Visión | Agencia de Creadores</title>
     <style>
+        /* Estilos base y variables corporativas */
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
             min-height: 100vh;
-            padding: 60px 20px;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            animation: fadeInDown 1s ease;
-        }
-
-        .header h1 {
-            font-size: 2.8rem;
-            color: #38bdf8;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            color: #94a3b8;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 25px;
         }
 
-        .step-card {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid #38bdf8;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        /* Retraso en las animaciones para que aparezcan uno por uno */
-        .step-card:nth-child(1) { animation-delay: 0.2s; }
-        .step-card:nth-child(2) { border-left-color: #8b5cf6; animation-delay: 0.4s; }
-        .step-card:nth-child(3) { border-left-color: #ec4899; animation-delay: 0.6s; }
-        .step-card:nth-child(4) { border-left-color: #10b981; animation-delay: 0.8s; }
-
-        .step-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #e2e8f0;
-            margin-bottom: 15px;
+        /* Barra de navegación estilo empresa */
+        nav {
+            background-color: var(--bg-card);
+            padding: 20px 5%;
+            border-bottom: 1px solid var(--border);
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 15px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         }
 
-        .step-number {
-            background: #38bdf8;
-            color: #0f172a;
-            width: 40px;
-            height: 40px;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        /* Sección Principal (Hero) */
+        main {
+            flex-grow: 1;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            border-radius: 50%;
-            font-weight: bold;
-            font-size: 1.3rem;
-            flex-shrink: 0;
-        }
-        
-        .step-card:nth-child(2) .step-number { background: #8b5cf6; }
-        .step-card:nth-child(3) .step-number { background: #ec4899; }
-        .step-card:nth-child(4) .step-number { background: #10b981; }
-
-        .step-content {
-            color: #cbd5e1;
-            line-height: 1.7;
-            font-size: 1.1rem;
+            text-align: center;
+            padding: 80px 20px;
         }
 
-        .btn-back {
+        .hero-container {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .tagline {
             display: inline-block;
-            margin-top: 50px;
-            padding: 12px 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #fff;
-            background: #334155;
-            border-radius: 30px;
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .mission-statement {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        .mission-statement span {
+            color: var(--primary);
+        }
+
+        .mission-sub {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Botones estilo corporativo */
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
             text-decoration: none;
-            transition: background 0.3s ease;
+            transition: all 0.2s ease;
+            cursor: pointer;
         }
 
-        .btn-back:hover {
-            background: #475569;
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 1px solid var(--primary);
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
         }
 
-        @keyframes fadeInUp {
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-outline:hover {
+            background-color: #f1f5f9;
+            border-color: #94a3b8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @media (max-width: 600px) {
+            .mission-statement { font-size: 2rem; }
+            .btn-group { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto;}
+            .btn { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Guía para Creadores</h1>
-        <p>Aprende a destacar con tu contenido siguiendo estos 4 pasos</p>
-    </div>
+    <nav>
+        <a href="#" class="logo">Creator<span>Studio.</span></a>
+    </nav>
 
-    <div class="container">
-        <!-- Paso 1 -->
-        <div class="step-card">
-            <div class="step-title">
-                <span class="step-number">1</span> Piensa el tema del video
-            </div>
-            <div class="step-content">
-                Debes elegir un buen tema, algo recurrente y buscable. Mi primer video fue de un tema meme y obtuvo en menos de 1 hora sus primeros 4 mil visitas. Finalmente llegó a 120 mil visitas en TikTok.
+    <main>
+        <div class="hero-container">
+            <div class="tagline">Nuestra Filosofía</div>
+            <h1 class="mission-statement">
+                No te rindas, crear contenido <span>no es tan fácil</span>, hacerse popular tampoco.
+            </h1>
+            <p class="mission-sub">
+                Pero si confías en ti mismo, puedes llegar a hacerlo. Descubre cómo potenciar tu alcance con la estrategia correcta.
+            </p>
+            
+            <div class="btn-group">
+                <a href="contenidobueno.html" class="btn btn-primary">¿Cómo puedo hacer buen contenido?</a>
+                <a href="#" class="btn btn-outline">Descubre nuestro trabajo</a>
             </div>
         </div>
-
-        <!-- Paso 2 -->
-        <div class="step-card">
-            <div class="step-title">
-                <span class="step-number">2</span> Elige un texto llamativo y colores atractivos
-            </div>
-            <div class="step-content">
-                La mayoría de la gente, skipea los vídeos, pero si es atractivo y llama la atención, se quedarán viendo el vídeo. Para eso añade texto o color relacionado a tu vídeo.
-            </div>
-        </div>
-
-        <!-- Paso 3 -->
-        <div class="step-card">
-            <div class="step-title">
-                <span class="step-number">3</span> No esperes vistas
-            </div>
-            <div class="step-content">
-                Confía en ti mismo. No siempre obtendrás visitas y likes. Cada persona tiene sus gustos, y esas personas, llegarán pronto. 20 vistas, parece poco pero no lo es. Imagina, 20 personas en un dispositivo, viendo tu vídeo, 1000 personas, 200, no importa el número. Importa tu motivación.
-            </div>
-        </div>
-
-        <!-- Paso 4 -->
-        <div class="step-card">
-            <div class="step-title">
-                <span class="step-number">4</span> Habla bien o pon una buena voz
-            </div>
-            <div class="step-content">
-                Anda directo al grano con frases cómo "¿Sabías qué?", "Un día...", "Algo que dejó locos a todos..." y más frases cómo esas. Acuerda de adaptarte a tu estilo.
-            </div>
-        </div>
-    </div>
-
-    <a href="index.html" class="btn-back">← Volver al Inicio</a>
+    </main>
 
 </body>
 </html>
