@@ -3,111 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visión | Agencia de Creadores</title>
+    <title>Mi Proceso | Creador de Contenido</title>
     <style>
-        /* Estilos base y variables corporativas */
+        /* Diseño Minimalista y Personal */
         :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --text-dark: #0f172a;
-            --text-muted: #475569;
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
-            --border: #e2e8f0;
+            --bg-main: #fafafa;
+            --text-main: #171717;
+            --text-secondary: #525252;
+            --accent: #0ea5e9;
+            --accent-hover: #0284c7;
+            --card-bg: #ffffff;
+            --border-color: #e5e5e5;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: var(--bg-body);
-            color: var(--text-dark);
+            background-color: var(--bg-main);
+            color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            line-height: 1.6;
         }
 
-        /* Barra de navegación estilo empresa */
+        /* Navegación simple y personal */
         nav {
-            background-color: var(--bg-card);
-            padding: 20px 5%;
-            border-bottom: 1px solid var(--border);
+            padding: 24px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--text-dark);
+        .brand {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
             text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
-        .logo span {
-            color: var(--primary);
+        .brand span {
+            color: var(--accent);
         }
 
-        /* Sección Principal (Hero) */
+        /* Sección Central */
         main {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 40px 20px;
             text-align: center;
-            padding: 80px 20px;
         }
 
-        .hero-container {
-            max-width: 800px;
-            animation: fadeIn 1s ease-out forwards;
+        .content-wrapper {
+            max-width: 700px;
+            animation: fadeUp 0.8s ease-out forwards;
         }
 
-        .tagline {
+        .badge {
             display: inline-block;
-            background-color: #dbeafe;
-            color: #1e40af;
-            padding: 6px 16px;
+            background-color: #f0f9ff;
+            color: var(--accent);
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 500;
             margin-bottom: 24px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            border: 1px solid #bae6fd;
         }
 
-        .mission-statement {
-            font-size: 2.5rem;
+        .quote {
+            font-size: 2.2rem;
             font-weight: 700;
             line-height: 1.3;
-            color: var(--text-dark);
+            color: var(--text-main);
             margin-bottom: 30px;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
         }
 
-        .mission-statement span {
-            color: var(--primary);
+        .quote span {
+            color: var(--accent);
+            position: relative;
         }
 
-        .mission-sub {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 50px;
-            max-width: 600px;
+        .description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 550px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* Botones estilo corporativo */
-        .btn-group {
+        /* Botones */
+        .actions {
             display: flex;
             gap: 16px;
             justify-content: center;
@@ -115,49 +115,44 @@
         }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 32px;
-            font-size: 1rem;
-            font-weight: 600;
+            padding: 12px 28px;
             border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
             text-decoration: none;
             transition: all 0.2s ease;
-            cursor: pointer;
         }
 
         .btn-primary {
-            background-color: var(--primary);
+            background-color: var(--text-main);
             color: white;
-            border: 1px solid var(--primary);
-            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+            border: 2px solid var(--text-main);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
             background-color: transparent;
-            color: var(--text-dark);
-            border: 1px solid #cbd5e1;
+            color: var(--text-main);
         }
 
-        .btn-outline:hover {
-            background-color: #f1f5f9;
-            border-color: #94a3b8;
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-secondary);
+            border: 2px solid var(--border-color);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+        .btn-secondary:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         @media (max-width: 600px) {
-            .mission-statement { font-size: 2rem; }
-            .btn-group { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto;}
+            .quote { font-size: 1.8rem; }
+            .actions { flex-direction: column; width: 100%; max-width: 280px; margin: 0 auto; }
             .btn { width: 100%; }
         }
     </style>
@@ -165,22 +160,25 @@
 <body>
 
     <nav>
-        <a href="#" class="logo">Creator<span>Studio.</span></a>
+        <a href="#" class="brand">Mi<span>Proceso</span></a>
     </nav>
 
     <main>
-        <div class="hero-container">
-            <div class="tagline">Nuestra Filosofía</div>
-            <h1 class="mission-statement">
-                No te rindas, crear contenido <span>no es tan fácil</span>, hacerse popular tampoco.
+        <div class="content-wrapper">
+            <div class="badge">Diario de Desarrollo & Creación</div>
+            
+            <h1 class="quote">
+                "No te rindas, crear contenido <span>no es tan fácil</span>, hacerse popular tampoco.
             </h1>
-            <p class="mission-sub">
-                Pero si confías en ti mismo, puedes llegar a hacerlo. Descubre cómo potenciar tu alcance con la estrategia correcta.
+            
+            <p class="description">
+                Pero si confías en ti mismo, puedes llegar a hacerlo."<br><br>
+                Bienvenidos a mi espacio personal. Aquí documento lo que he aprendido y comparto mi metodología de trabajo.
             </p>
             
-            <div class="btn-group">
-                <a href="contenidobueno.html" class="btn btn-primary">¿Cómo puedo hacer buen contenido?</a>
-                <a href="#" class="btn btn-outline">Descubre nuestro trabajo</a>
+            <div class="actions">
+                <a href="contenidobueno.html" class="btn btn-primary">¿Cómo hago mi contenido?</a>
+                <a href="#" class="btn btn-secondary">Ver mis proyectos</a>
             </div>
         </div>
     </main>
